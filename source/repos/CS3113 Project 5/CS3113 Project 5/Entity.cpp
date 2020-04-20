@@ -150,7 +150,7 @@ void Entity::CheckCollisionsY(Map *map) {    // Probes for tiles
 		colBotRight = true;
 	}
 
-	if ((colBotLeft || colBotRight) && (velocity.x == 0)) {
+	if ((colBotLeft || colBotRight) && ((velocity.x == 0) || (airborne))) {
 		position.y += penetration_y;
 		velocity.y = 0;
 		jumpcount = 0;
